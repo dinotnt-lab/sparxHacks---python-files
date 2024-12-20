@@ -1,0 +1,6 @@
+0 both
+1 multiple select
+2 select
+3 select from box
+4 type
+5 2 type
