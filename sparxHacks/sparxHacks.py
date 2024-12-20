@@ -103,7 +103,7 @@ def setup():
     sleep(3)
     press_and_release("ctrl+1")
 
-    messagebox.showinfo("Infomation", "This application only works if you have no other internet tabs open (other than sparx) and have not put any additonal files into the Sparx Hacks folder. If gauthmath stops giving answers, press 'home' to watch a short how to video, when the video finishes, please close the tab. Open your first question and press space")
+    messagebox.showinfo("Infomation", "This application only works if you have no other internet tabs open (other than sparx and gauth) and have not put any additonal files into the Sparx Hacks folder. Open your first question and press space")
 
 def take_image():
     image = ImageGrab.grab()
