@@ -96,6 +96,8 @@ def setup():
     print("currentPath: " + currentPath)
     print("imageFolderPath: " + imageFolderPath)
 
+    chatgpt.detectKey()
+
     get_coords()
     
     open_new_tab("https://www.sparxmaths.uk/student/homework")
@@ -103,7 +105,7 @@ def setup():
     sleep(3)
     press_and_release("ctrl+1")
 
-    messagebox.showinfo("Infomation", "This application only works if you have no other internet tabs open (other than sparx and gauth) and have not put any additonal files into the Sparx Hacks folder. Open your first question and press space")
+    show_message("Infomation", "This application only works if you have no other internet tabs open (other than sparx and gauth) and have not put any additonal files into the Sparx Hacks folder. Open your first question and press space")
 
 def take_image():
     image = ImageGrab.grab()
@@ -198,7 +200,7 @@ def execute_answer(answer, answertype):
     elif "2 type" in answertype:
         show_message("2 Type", f"Please select {answer}, submit and press space")
     elif "type" in answertype:
-        write(''.join(filter(str.isdigit, answer)))
+        write(''.join(filter(lambda x: x.isdigit() or x == '.', answer)))
         press_and_release("enter")
     elif "multiple select" in answertype:
         show_message("Multiple Select", f"Please select {answer}, submit and press space")
