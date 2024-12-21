@@ -12,7 +12,17 @@ from clipboard import paste
 import chatgpt
 import questionRecognition
 
-currentPath = path.dirname(path.abspath(__file__))
+def show_message(title, text):
+    root = tk.Tk()
+    root.withdraw()
+    root.wm_attributes("-topmost", 1)
+    messagebox.showinfo(title, text)
+    root.destroy()
+
+
+show_message("Information", "Please select the folder where you want to save the images and data files. You will need to remember this folder for future use.")
+
+currentPath = tk.filedialog.askdirectory()
 chdir(currentPath)
 print(currentPath)
 imageFolderPath = currentPath + "\Images"
@@ -28,13 +38,6 @@ x_done = 0
 y_done = 0
 x_answer = 0
 y_answer = 0
-
-def show_message(title, text):
-    root = tk.Tk()
-    root.withdraw()
-    root.wm_attributes("-topmost", 1)
-    messagebox.showinfo(title, text)
-    root.destroy()
 
 def setup():
     try:
